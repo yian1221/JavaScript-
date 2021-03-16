@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div align="center" id = 'label'>
+        <p>朝辞白帝彩云间，千里江陵一日还。--李白</p>
+        <p>会当凌绝顶，一览众山小。--杜甫</p>
+        <p>一泊沙来一泊去，一重浪灭一重生。--白居易</p>
+        <p>春眠不觉晓，处处闻啼鸟。--孟浩然</p>
+        <p>春蚕到死丝方尽，蜡炬成灰泪始干。--李商隐</p>
+        <p>桃花潭水深千尺，不及汪伦送我情。--李白<br /></p>
+    </div>
+</body>
+<!--
+<script type="text/javascript" src = "js_middle_b.js"></script>
+-->
+
+<script>
+    var box = document.getElementById('label');
+    var box_text = box.innerText;
+    var box_array = box_text.match(/\--.+\n/g);
+    console.log(box_text);
+    console.log(box_array);
+    writer_array = [box_array.length];
+    for(var i = 0; i < box_array.length; i++) {
+        writer_array[i] = box_array[i].split('--')[1].split('\n')[0];
+    }
+    console.log(writer_array);
+    var writer = [];
+    for(var j = 0; j < writer_array.length; j++){
+        if(writer.indexOf(writer_array[j]) == -1){
+            writer.push(writer_array[j]);
+        }
+    }
+    console.log(writer);
+</script>
+</html>
